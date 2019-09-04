@@ -16,7 +16,6 @@ RUN apk --no-cache --virtual build-dependencies add \
     && npm install \
     && apk del build-dependencies
 
-RUN npm run grunt
 
 COPY run.sh /
 RUN chmod a+x /run.sh
