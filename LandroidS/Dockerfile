@@ -16,7 +16,9 @@ RUN apk --no-cache --virtual build-dependencies add \
     && npm install \
     && apk del build-dependencies
 
-RUN npm run build
+RUN npm run clean
+RUN npm run grunt
+RUN npm prune --production
 COPY run.sh /
 RUN chmod a+x /run.sh
 
